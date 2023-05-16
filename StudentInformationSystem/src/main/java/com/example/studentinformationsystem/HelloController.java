@@ -7,29 +7,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class HelloController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    private Button btnAdmin;
-
 
 
     @FXML
-    private Button btnStudent;
-
-    @FXML
-    private Button btnTeacher;
-
-    @FXML
-    void handleAdmin(ActionEvent event) {
+    void handleLogin(ActionEvent event) {
 
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("admin_login.fxml"));
@@ -44,14 +32,6 @@ public class HelloController {
 
     }
 
-    @FXML
-    void handleStudent(ActionEvent event) {
 
-    }
-
-    @FXML
-    void handleTeacher(ActionEvent event) {
-
-    }
 
 }
