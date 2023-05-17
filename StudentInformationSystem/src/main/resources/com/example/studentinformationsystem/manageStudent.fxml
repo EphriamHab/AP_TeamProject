@@ -6,15 +6,19 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="377.0" prefWidth="637.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
+<AnchorPane prefHeight="399.0" prefWidth="649.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
    <children>
       <GridPane layoutX="247.0" layoutY="67.0" prefHeight="289.0" prefWidth="383.0" style="-fx-background-color: #b4caf1;">
         <columnConstraints>
@@ -105,8 +109,8 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <TextField fx:id="txfSearch" layoutX="402.0" layoutY="14.0" promptText="search" />
-      <Button fx:id="btnSearch" layoutX="551.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
+      <TextField fx:id="txfSearch" layoutX="395.0" layoutY="37.0" promptText="search" />
+      <Button fx:id="btnSearch" layoutX="551.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -168,10 +172,23 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="92.0" layoutY="12.0" prefHeight="38.0" prefWidth="281.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
+      <Label layoutX="81.0" layoutY="30.0" prefHeight="26.0" prefWidth="281.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Label>
+      <MenuBar prefHeight="25.0" prefWidth="649.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="HOME">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+         <padding>
+            <Insets left="250.0" />
+         </padding>
+      </MenuBar>
+      <HBox layoutY="375.0" prefHeight="51.0" prefWidth="649.0" style="-fx-background-color: black;" />
    </children>
 </AnchorPane>
