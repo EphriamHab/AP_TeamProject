@@ -23,6 +23,8 @@ public class admin_page_controller {
 
     @FXML
     private Button btnMangeStud;
+    @FXML
+    private Button backHome;
 
     @FXML
     void manageCourse(ActionEvent event) {
@@ -67,6 +69,15 @@ public class admin_page_controller {
             ex.printStackTrace();
         }
 
+    }
+    @FXML
+    void handleBackHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

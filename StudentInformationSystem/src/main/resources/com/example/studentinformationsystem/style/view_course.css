@@ -1,0 +1,10 @@
+.table{
+  -fx-background-color : #719fad;
+
+}
+.textArea{
+   textArea-background:#719fad;
+}
+.textArea .content{
+-fx-background-color:textArea-background;
+}

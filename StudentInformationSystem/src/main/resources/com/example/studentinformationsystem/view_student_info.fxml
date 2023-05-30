@@ -5,11 +5,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="422.0" prefWidth="613.0" style="-fx-background-color: #5b69b9;;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_student_controller">
+<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #5b69b9;;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_student_controller">
    <children>
-      <TableView fx:id="tableView" layoutX="5.0" layoutY="69.0" prefHeight="323.0" prefWidth="604.0" style="-fx-background-color: #c3d4ed;">
+      <TableView fx:id="tableView" layoutX="8.0" layoutY="69.0" prefHeight="323.0" prefWidth="615.0" style="-fx-background-color: #c3d4ed;">
         <columns>
           <TableColumn fx:id="col_ID" prefWidth="75.0" text="Student_ID" />
           <TableColumn fx:id="col_FN" prefWidth="75.0" text="FirstName" />
@@ -23,10 +26,21 @@
       </TableView>
       <TextField layoutX="61.0" layoutY="29.0" onAction="#handleFilter" prefHeight="25.0" prefWidth="337.0" />
       <Button fx:id="btn_search" layoutX="401.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #bed4f4;" text="Search" />
-      <Button fx:id="btn_back" layoutX="14.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleBackbutton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #bed4f4;" text="Back">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+      <HBox layoutY="427.0" prefHeight="43.0" prefWidth="630.0" style="-fx-background-color: darkblue;">
+         <children>
+            <Button fx:id="btn_back" mnemonicParsing="false" onAction="#handleBackbutton" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #bed4f4;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

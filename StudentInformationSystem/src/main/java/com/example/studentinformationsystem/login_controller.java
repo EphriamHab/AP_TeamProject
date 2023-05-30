@@ -38,7 +38,7 @@ public class login_controller {
 
     @FXML
     void handleLogin(ActionEvent event) {
-        if (cmbLoginType.getValue().toString() == "Admin") {
+        if (cmbLoginType.getValue().toString().equalsIgnoreCase("Admin")) {
             String sql = "SELECT * FROM admin WHERE first_name = ? and admin_id = ?";
             connect = Database.connectDb();
             try {
@@ -50,7 +50,7 @@ public class login_controller {
 
                 result = prepare.executeQuery();
 //            CHECK IF FIELDS ARE EMPTY
-                if (username.getText().isEmpty() || password.getText().isEmpty()) {
+                if (username.getText().isEmpty() || password.getText().isEmpty() || cmbLoginType.getValue().toString().isEmpty()) {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
                     alert.setHeaderText(null);
@@ -92,7 +92,7 @@ public class login_controller {
 
                 result = prepare.executeQuery();
 //            CHECK IF FIELDS ARE EMPTY
-                if (username.getText().isEmpty() || password.getText().isEmpty()) {
+                if (username.getText().isEmpty() || password.getText().isEmpty()||cmbLoginType.getValue().toString().isEmpty() ) {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
                     alert.setHeaderText(null);

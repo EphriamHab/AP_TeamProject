@@ -25,6 +25,10 @@ public class manage_student_controller {
         @FXML
         private Button btnSearch;
         @FXML
+        private Button back;
+        @FXML
+        private Button backHome;
+        @FXML
         private Button btnDelete;
 
         @FXML
@@ -173,6 +177,24 @@ public class manage_student_controller {
                 }
 
         }
+    @FXML
+    void handleBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("admin_page.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void handleBackHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     }
 

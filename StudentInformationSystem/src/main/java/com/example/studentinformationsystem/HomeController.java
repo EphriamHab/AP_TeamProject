@@ -12,7 +12,7 @@ import javafx.scene.control.Menu;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloController {
+public class HomeController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -23,17 +23,16 @@ public class HelloController {
     @FXML
     void handleAbout(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("AboutNotepad");
-        alert.setHeaderText("MyNotepad");
-        alert.setContentText("My Name is is Ephrem Habtamu I made this notepad app by using javafx. You Can "+
-                "Contact Me with email address:\n ephraim0524@gmail.com");
+        alert.setTitle("AboutSIMS");
+        alert.setHeaderText("SIMS");
+        alert.setContentText("This sims desktop application is done by team for class project we can");
         alert.showAndWait();
     }
     @FXML
     void handleLogin(ActionEvent event) {
 
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("admin_login.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
                 root = loader.load();
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);

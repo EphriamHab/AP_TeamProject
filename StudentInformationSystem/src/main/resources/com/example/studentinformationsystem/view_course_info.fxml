@@ -9,31 +9,33 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="656.0" style="-fx-background-color: #879190;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_course_controller">
+<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #6c6cd4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_course_controller">
    <children>
-      <TableView fx:id="tableView" layoutX="232.0" layoutY="53.0" prefHeight="283.0" prefWidth="413.0" style="-fx-background-color: #737a7a;">
+      <TableView fx:id="tableView" layoutX="232.0" layoutY="53.0" prefHeight="300.0" prefWidth="387.0" style="-fx-border-color: lightcyan;" styleClass="table" stylesheets="@style/view_course.css" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="53.0">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="66.0" text="courseID" />
-          <TableColumn fx:id="colCN" prefWidth="78.6666259765625" text="courseName" />
-            <TableColumn fx:id="colCC" prefWidth="76.0" text="courseCode" />
-            <TableColumn fx:id="colCrHr" prefWidth="95.33331298828125" text="CreditHours" />
-            <TableColumn fx:id="colDepId" prefWidth="106.66668701171875" text="DepartmentID" />
+          <TableColumn fx:id="colID" prefWidth="57.33331298828125" text="courseID" />
+          <TableColumn fx:id="colCN" prefWidth="78.66668701171875" text="courseName" />
+            <TableColumn fx:id="colCC" prefWidth="71.33331298828125" text="courseCode" />
+            <TableColumn fx:id="colCrHr" prefWidth="83.33328247070312" text="CreditHours" />
+            <TableColumn fx:id="colDepId" minWidth="-1.0" prefWidth="-1.0" text="DepartmentID" />
+            <TableColumn fx:id="colCrHr1" prefWidth="95.33331298828125" text="DepartmentID" />
         </columns>
       </TableView>
-      <VBox layoutX="21.0" layoutY="54.0" prefHeight="283.0" prefWidth="197.0" style="-fx-background-color: #737a7a;">
+      <VBox layoutX="21.0" layoutY="54.0" prefHeight="300.0" prefWidth="197.0" style="-fx-background-color: #737a7a;">
          <children>
-            <ImageView fitHeight="103.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="202.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets bottom="5.0" left="30.0" right="10.0" top="5.0" />
+                  <Insets />
                </VBox.margin>
                <image>
                   <Image url="@image/course.png" />
                </image>
             </ImageView>
-            <TextArea prefHeight="168.0" prefWidth="175.0" style="-fx-background-color: #b6cccc;" text="&#10; 💚View Course info💚&#10; 💚 serach by CourseId💚&#10;">
+            <TextArea prefHeight="101.0" prefWidth="202.0" styleClass="textArea" stylesheets="@style/view_course.css" text="&#10; 💚View Course info💚&#10; 💚 serach by CourseId💚&#10;">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
@@ -42,6 +44,18 @@
       </VBox>
       <TextField fx:id="txf_search" layoutX="244.0" layoutY="20.0" prefHeight="25.0" prefWidth="180.0" />
       <Button fx:id="btn_search" layoutX="439.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #cedede;" text="search" />
-      <Button fx:id="btnBack" layoutX="21.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #cedede;" text="Back" />
+      <HBox layoutX="-4.0" layoutY="419.0" prefHeight="47.0" prefWidth="637.0">
+         <children>
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="47.0" prefWidth="66.0" style="-fx-background-color: #cedede;">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -6,10 +6,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,9 +17,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="399.0" prefWidth="649.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
+<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
    <children>
-      <GridPane layoutX="247.0" layoutY="67.0" prefHeight="290.0" prefWidth="383.0" styleClass="grid" stylesheets="@style/mangeStud.css">
+      <GridPane layoutX="258.0" layoutY="86.0" prefHeight="290.0" prefWidth="383.0" styleClass="grid" stylesheets="@style/mangeStud.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.99995930989584" minWidth="10.0" prefWidth="136.66670735677084" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.6666259765625" minWidth="10.0" prefWidth="236.6666259765625" />
@@ -36,7 +35,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="First Name" GridPane.rowIndex="1">
+            <Label text="First Name" textFill="#747a82" GridPane.rowIndex="1">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font>
@@ -127,13 +126,13 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <TextField fx:id="txfSearch" layoutX="395.0" layoutY="37.0" promptText="search" />
-      <Button fx:id="btnSearch" layoutX="551.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
+      <TextField fx:id="txfSearch" layoutX="391.0" layoutY="55.0" promptText="search" />
+      <Button fx:id="btnSearch" layoutX="550.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox layoutX="35.0" layoutY="71.0" prefHeight="282.0" prefWidth="168.0" styleClass="vbox" stylesheets="@style/mangeStud.css">
+      <VBox layoutX="39.0" layoutY="90.0" prefHeight="282.0" prefWidth="168.0" styleClass="vbox" stylesheets="@style/mangeStud.css">
          <children>
             <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#handleRegistration" prefHeight="59.0" prefWidth="169.0" text="Register">
                <padding>
@@ -190,23 +189,44 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="81.0" layoutY="30.0" prefHeight="26.0" prefWidth="281.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
+      <Label layoutX="81.0" layoutY="42.0" prefHeight="26.0" prefWidth="281.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Label>
-      <MenuBar prefHeight="25.0" prefWidth="649.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="HOME">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-         <padding>
-            <Insets left="250.0" />
-         </padding>
-      </MenuBar>
-      <HBox layoutY="375.0" prefHeight="51.0" prefWidth="649.0" style="-fx-background-color: black;" />
+      <HBox layoutY="422.0" prefHeight="39.0" prefWidth="663.0" style="-fx-background-color: #747a82;">
+         <children>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#handleBack" prefHeight="39.0" prefWidth="35.0">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></HBox>
+      <HBox layoutY="4.0" prefHeight="26.0" prefWidth="663.0" style="-fx-background-color: darkcyan;">
+         <children>
+            <Button fx:id="backHome" mnemonicParsing="false" onAction="#handleBackHome" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: darkcyan;" text="Home" textFill="#e26385">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/home.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -15,3 +15,9 @@
  -fx-background-radius : 10;
 
 }
+.textArea{
+   textArea-background:#b2cccf;
+}
+.textArea .content{
+-fx-background-color:textArea-background;
+}

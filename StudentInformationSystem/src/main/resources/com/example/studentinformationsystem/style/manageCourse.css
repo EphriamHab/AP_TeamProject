@@ -1,0 +1,15 @@
+
+.grid{
+  -fx-background-color :  #aca4ba;
+  -fx-background-radius : 30;
+}
+.button{
+-fx-background-color : #7896d6;
+-fx-background-radius : 10;
+}
+.textArea{
+   textArea-background: #3b63b7;
+}
+.textArea .content{
+-fx-background-color:textArea-background;
+}
