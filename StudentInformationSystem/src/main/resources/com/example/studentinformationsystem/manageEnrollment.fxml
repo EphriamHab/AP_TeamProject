@@ -1,13 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="450.0" prefWidth="630.0">
-
+<AnchorPane prefHeight="450.0" prefWidth="630.0" styleClass="pane" stylesheets="@style/manageEnroll.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.ManageEnrollementController">
+   <children>
+      <HBox prefHeight="41.0" prefWidth="634.0" styleClass="hbox" stylesheets="@style/manageEnroll.css">
+         <children>
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: darkcyan;">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></HBox>
+      <HBox layoutX="-2.0" layoutY="414.0" prefHeight="35.0" prefWidth="636.0" styleClass="hbox" stylesheets="@style/manageEnroll.css" />
+      <GridPane hgap="10.0" layoutX="11.0" layoutY="108.0" prefHeight="255.0" prefWidth="257.0" styleClass="grid" stylesheets="@style/manageEnroll.css" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.33333587646484" minWidth="10.0" prefWidth="94.66666412353516" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.99999618530273" minWidth="10.0" prefWidth="131.33333587646484" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label lineSpacing="2.0" text="Enroll_id" textFill="#9816a1">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="72.0" text="Student_id" textFill="#9816a1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="97.0" text="Course_id" textFill="#9816a1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Enroll_date" textFill="#9816a1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="txfEnID" prefHeight="25.0" prefWidth="107.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txfStudId" layoutX="109.0" layoutY="27.0" prefHeight="25.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txfCId" layoutX="109.0" layoutY="87.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <DatePicker fx:id="txfEndate" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </DatePicker>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </GridPane>
+      <Line endX="299.3333435058594" endY="93.33332824707031" startX="299.3333435058594" startY="374.0" stroke="#e417b4" strokeWidth="2.0" />
+      <TableView fx:id="enrollTable" layoutX="315.0" layoutY="95.0" prefHeight="281.0" prefWidth="302.0" styleClass="table" stylesheets="@style/manageEnroll.css">
+        <columns>
+          <TableColumn fx:id="colEnId" prefWidth="75.0" text="Enroll_id" />
+          <TableColumn fx:id="colSID" prefWidth="75.0" text="Student_id" />
+            <TableColumn fx:id="colCId" prefWidth="75.0" text="Course_id" />
+            <TableColumn fx:id="colEd" prefWidth="75.0" text="Enroll_date" />
+        </columns>
+      </TableView>
+      <Text fill="#0a0f45" layoutX="187.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE ENROLLEMENT" wrappingWidth="257.3333333333333">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEnroll" layoutX="22.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleEnrollement" prefHeight="35.0" prefWidth="121.0" stylesheets="@style/manageEnroll.css" text="Enroll student " />
+      <Button fx:id="btnDelete" layoutX="160.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="35.0" prefWidth="72.0" stylesheets="@style/manageEnroll.css" text="Remove" />
+   </children>
 </AnchorPane>

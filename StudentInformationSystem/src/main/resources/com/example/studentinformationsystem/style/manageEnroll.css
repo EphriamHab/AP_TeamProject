@@ -1,0 +1,18 @@
+.pane{
+   -fx-background-color : #93a9bd;
+}
+.hbox{
+ -fx-background-color : darkcyan;
+}
+.grid{
+  -fx-background-color : #b2cccf;
+  -fx-background-radius : 20;
+}
+.table{
+  -fx-background-color : #719fad;
+
+}
+.button{
+-fx-background-color : #1f80e0;
+-fx-background-radius : 10;
+}
