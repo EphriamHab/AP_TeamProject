@@ -65,7 +65,6 @@ public class view_course_controller {
         colID.setCellValueFactory(new PropertyValueFactory<>("courseID"));
         colCN.setCellValueFactory(new PropertyValueFactory<>("courseName"));
         colCC.setCellValueFactory(new PropertyValueFactory<>("courseCode"));
-        colDepId.setCellValueFactory(new PropertyValueFactory<>("DepartmentId"));
         colCrHr.setCellValueFactory(new PropertyValueFactory<>("CreditHours"));
         colDepId.setCellValueFactory(new PropertyValueFactory<>("DepartmentId"));
         tableView.setItems(courseList);
@@ -86,7 +85,7 @@ public class view_course_controller {
                         result.getInt(4),
                         result.getString(5)));
             }
-//                        tableView.setItems(studentList)
+
             loadTableViews();
             connect.close();
 

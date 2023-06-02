@@ -10,7 +10,7 @@ import java.io.IOException;
 public class Home extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("SIMS");
         stage.setResizable(false);
