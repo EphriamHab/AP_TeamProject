@@ -35,16 +35,22 @@ public class ViewGradeController {
     private TableView<StudentResult> resultTable;
 
     private String loggedInStudentId;
+    private String loggedInUsername;
+
+
+    public void setLoggedInUsername(String username) {
+        this.loggedInUsername = username;
+
+        tableView();
+    }
 
 
 
+    public void tableView() {
+        loggedInStudentId = fetchStudentId(loggedInUsername);
 
 
-    public void initialize() {
-        // Set up the table
-        loggedInStudentId = fetchStudentId();
         if (loggedInStudentId != null) {
-
 
             Col_CID.setCellValueFactory(cellData -> cellData.getValue().courseIdProperty());
             Col_CN.setCellValueFactory(cellData -> cellData.getValue().courseNameProperty());
@@ -53,35 +59,41 @@ public class ViewGradeController {
             resultTable.setItems(getStudentResults());
 
             // Calculate and display the GPA
-            String[] studentInfo = getStudentInfo();
+            loggedInStudentId = fetchStudentId(loggedInUsername);
+            String[] studentInfo = getStudentInfo(loggedInStudentId);
             String firstName = studentInfo[0];
             String lastName = studentInfo[1];
             labelName.setText(firstName + " " + lastName);
             double gpa = calculateGPA();
             txfGpa.setText(String.format("%.2f", gpa));
-            System.out.println("loggedInStudentId: " + loggedInStudentId);
+
         }
     }
-  private String fetchStudentId(){
-       try {
-           connect = Database.connectDb();
-           prepare = connect.prepareStatement("SELECT student_id FROM user");
-           result=prepare.executeQuery();
-           if (result.next()) {
-               return result.getString("student_id");
-           }
-       } catch (SQLException e) {
-           e.printStackTrace();
-       }
+    private String fetchStudentId(String username) {
+        try {
+            connect = Database.connectDb();
+            prepare = connect.prepareStatement("SELECT student_id FROM user WHERE user_name = ?");
+            prepare.setString(1, username);
+            // Replace getCurrentUsername() with the actual method to retrieve the current username
+            result = prepare.executeQuery();
+            System.out.println(username);
+            if (result.next()) {
+
+                return result.getString("student_id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
-  }
-    private String[] getStudentInfo() {
+    }
+
+     private String[] getStudentInfo(String loggedInStudentId) {
         String[] studentInfo = new String[2];
 
         try {
             connect = Database.connectDb();
             prepare = connect.prepareStatement("SELECT first_name, last_name FROM student WHERE student_id = ?");
-            prepare.setString(1, loggedInStudentId);
+            prepare.setString(1, this.loggedInStudentId);
             result = prepare.executeQuery();
 
             if (result.next()) {
@@ -103,7 +115,7 @@ public class ViewGradeController {
             connect = Database.connectDb();
             prepare = connect.prepareStatement("SELECT cmv.course_id, cmv.course_name, cmv.credit_hours, cmv.mark_obtained FROM course_marks_view cmv JOIN user sit ON cmv.student_id = sit.student_id WHERE cmv.student_id = ?");
             System.out.println("prepare");
-            prepare.setString(1, loggedInStudentId);
+            prepare.setString(1, this.loggedInStudentId);
             result = prepare.executeQuery();
 
             while (result.next()) {
