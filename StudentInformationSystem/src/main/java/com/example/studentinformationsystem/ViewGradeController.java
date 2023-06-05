@@ -7,13 +7,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
 public class ViewGradeController {
+//    private static ViewGradeController instance; // Singleton instance
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
+    private ViewGradeController() {
+    }
     @FXML
     private TableColumn<StudentResult , String> Col_CID;
 
@@ -40,11 +44,14 @@ public class ViewGradeController {
 
     public void setLoggedInUsername(String username) {
         this.loggedInUsername = username;
+        tableView();
+
+
+    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
         tableView();
     }
-
-
 
     public void tableView() {
         loggedInStudentId = fetchStudentId(loggedInUsername);
@@ -76,7 +83,7 @@ public class ViewGradeController {
             prepare.setString(1, username);
             // Replace getCurrentUsername() with the actual method to retrieve the current username
             result = prepare.executeQuery();
-            System.out.println(username);
+            
             if (result.next()) {
 
                 return result.getString("student_id");

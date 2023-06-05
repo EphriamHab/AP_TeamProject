@@ -4,7 +4,7 @@
 }
 .vbox{
    -fx-background-color : #93a9bd;
-   -fx-background-radius : 30;
+   -fx-background-radius : 10;
 }
 .grid{
   -fx-background-color : #b2cccf;
