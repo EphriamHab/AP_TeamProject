@@ -13,19 +13,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #6c6cd4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_course_controller">
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #6c6cd4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_course_controller">
    <children>
-      <TableView fx:id="tableView" layoutX="232.0" layoutY="53.0" prefHeight="300.0" prefWidth="387.0" style="-fx-border-color: lightcyan;" styleClass="table" stylesheets="@style/view_course.css" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="53.0">
+      <TableView fx:id="tableView" layoutX="269.0" layoutY="73.0" prefHeight="480.0" prefWidth="692.0" style="-fx-border-color: lightcyan;" styleClass="table" stylesheets="@style/view_course.css" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="73.0">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="57.33331298828125" text="courseID" />
-          <TableColumn fx:id="colCN" prefWidth="78.66668701171875" text="courseName" />
-            <TableColumn fx:id="colCC" prefWidth="71.33331298828125" text="courseCode" />
-            <TableColumn fx:id="colCrHr" prefWidth="83.33328247070312" text="CreditHours" />
-            <TableColumn fx:id="colDepId" minWidth="-1.0" prefWidth="-1.0" text="DepartmentID" />
-            <TableColumn fx:id="colCrHr1" prefWidth="95.33331298828125" text="DepartmentID" />
+          <TableColumn fx:id="colID" prefWidth="148.0" text="courseID" />
+          <TableColumn fx:id="colCN" prefWidth="164.0" text="courseName" />
+            <TableColumn fx:id="colCC" prefWidth="129.33331298828125" text="courseCode" />
+            <TableColumn fx:id="colCrHr" prefWidth="109.33331298828125" text="CreditHours" />
+            <TableColumn fx:id="colDepId" minWidth="-1.0" prefWidth="138.6666259765625" text="DepartmentID" />
         </columns>
       </TableView>
-      <VBox layoutX="21.0" layoutY="54.0" prefHeight="300.0" prefWidth="197.0" style="-fx-background-color: #737a7a;">
+      <VBox layoutX="21.0" layoutY="54.0" prefHeight="500.0" prefWidth="202.0" styleClass="vbox" stylesheets="@style/view_course.css">
          <children>
             <ImageView fitHeight="202.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
@@ -35,27 +34,24 @@
                   <Image url="@image/course.png" />
                </image>
             </ImageView>
-            <TextArea prefHeight="101.0" prefWidth="202.0" styleClass="textArea" stylesheets="@style/view_course.css" text="&#10; 💚View Course info💚&#10; 💚 serach by CourseId💚&#10;">
+            <TextArea prefHeight="78.0" prefWidth="202.0" styleClass="textArea" stylesheets="@style/view_course.css" text="&#10; 💚View Course info💚&#10; 💚 serach by CourseId💚&#10;">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </TextArea>
          </children>
       </VBox>
-      <TextField fx:id="txf_search" layoutX="244.0" layoutY="20.0" prefHeight="25.0" prefWidth="180.0" />
-      <Button fx:id="btn_search" layoutX="439.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #cedede;" text="search" />
-      <HBox layoutX="-4.0" layoutY="419.0" prefHeight="47.0" prefWidth="637.0">
-         <children>
-            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="47.0" prefWidth="66.0" style="-fx-background-color: #cedede;">
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@image/back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </HBox>
+      <TextField fx:id="txf_search" layoutX="514.0" layoutY="32.0" prefHeight="25.0" prefWidth="180.0" />
+      <Button fx:id="btn_search" layoutX="709.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #cedede;" text="search" />
+      <HBox layoutX="-4.0" layoutY="419.0" prefHeight="47.0" prefWidth="637.0" />
+      <Button fx:id="btnBack" layoutY="578.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="47.0" prefWidth="66.0" style="-fx-background-color: #cedede;">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

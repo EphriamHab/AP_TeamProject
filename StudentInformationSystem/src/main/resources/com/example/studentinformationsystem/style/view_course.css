@@ -2,6 +2,9 @@
   -fx-background-color : #719fad;
 
 }
+.vbox{
+-fx-background-color : #719fad;
+}
 .textArea{
    textArea-background:#719fad;
 }

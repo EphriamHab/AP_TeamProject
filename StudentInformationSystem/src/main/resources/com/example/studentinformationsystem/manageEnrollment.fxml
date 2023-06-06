@@ -18,9 +18,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="450.0" prefWidth="630.0" styleClass="pane" stylesheets="@style/manageEnroll.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.ManageEnrollementController">
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" styleClass="pane" stylesheets="@style/manageEnroll.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.ManageEnrollementController">
    <children>
-      <HBox prefHeight="41.0" prefWidth="634.0" styleClass="hbox" stylesheets="@style/manageEnroll.css">
+      <HBox prefHeight="42.0" prefWidth="1000.0" styleClass="hbox" stylesheets="@style/manageEnroll.css">
          <children>
             <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: darkcyan;">
                <HBox.margin>
@@ -35,8 +35,8 @@
                </graphic>
             </Button>
          </children></HBox>
-      <HBox layoutX="-2.0" layoutY="414.0" prefHeight="35.0" prefWidth="636.0" styleClass="hbox" stylesheets="@style/manageEnroll.css" />
-      <GridPane hgap="10.0" layoutX="11.0" layoutY="108.0" prefHeight="255.0" prefWidth="257.0" styleClass="grid" stylesheets="@style/manageEnroll.css" vgap="10.0">
+      <HBox layoutY="577.0" prefHeight="42.0" prefWidth="1000.0" styleClass="hbox" stylesheets="@style/manageEnroll.css" />
+      <GridPane hgap="10.0" layoutX="22.0" layoutY="108.0" prefHeight="365.0" prefWidth="299.0" styleClass="grid" stylesheets="@style/manageEnroll.css" vgap="10.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.33333587646484" minWidth="10.0" prefWidth="94.66666412353516" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.99999618530273" minWidth="10.0" prefWidth="131.33333587646484" />
@@ -105,8 +105,8 @@
             <Insets left="10.0" />
          </padding>
       </GridPane>
-      <Line endX="299.3333435058594" endY="93.33332824707031" startX="299.3333435058594" startY="374.0" stroke="#e417b4" strokeWidth="2.0" />
-      <TableView fx:id="enrollTable" layoutX="315.0" layoutY="95.0" prefHeight="281.0" prefWidth="302.0" styleClass="table" stylesheets="@style/manageEnroll.css">
+      <Line endX="299.3333435058594" endY="93.33332824707031" layoutX="65.0" layoutY="-2.0" startX="299.3333435058594" startY="548.3333129882812" stroke="#e417b4" strokeWidth="2.0" />
+      <TableView fx:id="enrollTable" layoutX="410.0" layoutY="92.0" prefHeight="455.0" prefWidth="529.0" styleClass="table" stylesheets="@style/manageEnroll.css">
         <columns>
           <TableColumn fx:id="colEnId" prefWidth="75.0" text="Enroll_id" />
           <TableColumn fx:id="colSID" prefWidth="75.0" text="Student_id" />
@@ -119,7 +119,7 @@
             <Font name="Times New Roman Bold Italic" size="20.0" />
          </font>
       </Text>
-      <Button fx:id="btnEnroll" layoutX="22.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleEnrollement" prefHeight="35.0" prefWidth="121.0" stylesheets="@style/manageEnroll.css" text="Enroll student " />
-      <Button fx:id="btnDelete" layoutX="160.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="35.0" prefWidth="72.0" stylesheets="@style/manageEnroll.css" text="Remove" />
+      <Button fx:id="btnEnroll" layoutX="24.0" layoutY="499.0" mnemonicParsing="false" onAction="#handleEnrollement" prefHeight="35.0" prefWidth="121.0" stylesheets="@style/manageEnroll.css" text="Enroll student " />
+      <Button fx:id="btnDelete" layoutX="170.0" layoutY="499.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="35.0" prefWidth="72.0" stylesheets="@style/manageEnroll.css" text="Remove" />
    </children>
 </AnchorPane>

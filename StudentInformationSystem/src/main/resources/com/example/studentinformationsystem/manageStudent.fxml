@@ -17,9 +17,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #5b69b9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.manage_student_controller">
    <children>
-      <GridPane layoutX="258.0" layoutY="86.0" prefHeight="290.0" prefWidth="383.0" styleClass="grid" stylesheets="@style/mangeStud.css">
+      <GridPane layoutX="356.0" layoutY="102.0" prefHeight="470.0" prefWidth="493.0" styleClass="grid" stylesheets="@style/mangeStud.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.99995930989584" minWidth="10.0" prefWidth="136.66670735677084" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.6666259765625" minWidth="10.0" prefWidth="236.6666259765625" />
@@ -35,7 +35,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="First Name" textFill="#747a82" GridPane.rowIndex="1">
+            <Label text="First Name" GridPane.rowIndex="1">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font>
@@ -126,13 +126,13 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <TextField fx:id="txfSearch" layoutX="391.0" layoutY="55.0" promptText="search" />
-      <Button fx:id="btnSearch" layoutX="550.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
+      <TextField fx:id="txfSearch" layoutX="548.0" layoutY="55.0" promptText="search" />
+      <Button fx:id="btnSearch" layoutX="712.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="search">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox layoutX="39.0" layoutY="90.0" prefHeight="282.0" prefWidth="168.0" styleClass="vbox" stylesheets="@style/mangeStud.css">
+      <VBox layoutX="20.0" layoutY="136.0" prefHeight="421.0" prefWidth="205.0" styleClass="vbox" stylesheets="@style/mangeStud.css">
          <children>
             <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#handleRegistration" prefHeight="59.0" prefWidth="169.0" text="Register">
                <padding>
@@ -150,7 +150,7 @@
             </Button>
             <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="59.0" prefWidth="169.0" text="Update">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
                </VBox.margin>
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
@@ -164,7 +164,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
                </VBox.margin>
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
@@ -175,7 +175,7 @@
             </Button>
             <Button fx:id="btnView" mnemonicParsing="false" onAction="#handleView" prefHeight="59.0" prefWidth="169.0" text="View">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
                </VBox.margin>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -194,7 +194,7 @@
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Label>
-      <HBox layoutY="422.0" prefHeight="39.0" prefWidth="663.0" style="-fx-background-color: #747a82;">
+      <HBox layoutX="-2.0" layoutY="580.0" prefHeight="39.0" prefWidth="1007.0" style="-fx-background-color: #747a82;">
          <children>
             <Button fx:id="back" mnemonicParsing="false" onAction="#handleBack" prefHeight="39.0" prefWidth="35.0">
                <graphic>
@@ -206,7 +206,7 @@
                </graphic>
             </Button>
          </children></HBox>
-      <HBox layoutY="4.0" prefHeight="26.0" prefWidth="663.0" style="-fx-background-color: darkcyan;">
+      <HBox layoutY="-1.0" prefHeight="39.0" prefWidth="1005.0" style="-fx-background-color: darkcyan;">
          <children>
             <Button fx:id="backHome" mnemonicParsing="false" onAction="#handleBackHome" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: darkcyan;" text="Home" textFill="#e26385">
                <HBox.margin>

@@ -12,12 +12,11 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ViewGradeController {
-//    private static ViewGradeController instance; // Singleton instance
+
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private ViewGradeController() {
-    }
+
     @FXML
     private TableColumn<StudentResult , String> Col_CID;
 
@@ -49,7 +48,6 @@ public class ViewGradeController {
 
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         tableView();
     }
 
@@ -66,7 +64,7 @@ public class ViewGradeController {
             resultTable.setItems(getStudentResults());
 
             // Calculate and display the GPA
-            loggedInStudentId = fetchStudentId(loggedInUsername);
+
             String[] studentInfo = getStudentInfo(loggedInStudentId);
             String firstName = studentInfo[0];
             String lastName = studentInfo[1];

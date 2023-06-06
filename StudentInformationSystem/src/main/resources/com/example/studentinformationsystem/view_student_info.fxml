@@ -10,23 +10,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="450.0" prefWidth="630.0" style="-fx-background-color: #5b69b9;;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_student_controller">
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #5b69b9;;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.view_student_controller">
    <children>
-      <TableView fx:id="tableView" layoutX="8.0" layoutY="69.0" prefHeight="323.0" prefWidth="615.0" style="-fx-background-color: #c3d4ed;">
+      <TableView fx:id="tableView" layoutX="66.0" layoutY="69.0" prefHeight="471.0" prefWidth="873.0" style="-fx-background-color: #c3d4ed;">
         <columns>
-          <TableColumn fx:id="col_ID" prefWidth="75.0" text="Student_ID" />
-          <TableColumn fx:id="col_FN" prefWidth="75.0" text="FirstName" />
-            <TableColumn fx:id="col_LN" prefWidth="75.0" text="LastName" />
-            <TableColumn fx:id="col_Email" prefWidth="75.0" text="Email" />
-            <TableColumn fx:id="col_Address" prefWidth="69.33331298828125" text="Address" />
-            <TableColumn fx:id="col_DoB" prefWidth="81.3333740234375" text="Date_of_birth" />
-            <TableColumn fx:id="colGender" prefWidth="49.33331298828125" text="Gender" />
-            <TableColumn fx:id="col_DoE" prefWidth="102.00003051757812" text="Date_of_Enrolled" />
+          <TableColumn fx:id="col_ID" prefWidth="84.00000762939453" text="Student_ID" />
+          <TableColumn fx:id="col_FN" prefWidth="95.33334350585938" text="FirstName" />
+            <TableColumn fx:id="col_LN" prefWidth="101.99998474121094" text="LastName" />
+            <TableColumn fx:id="col_Email" prefWidth="106.0" text="Email" />
+            <TableColumn fx:id="col_Address" prefWidth="116.00003051757812" text="Address" />
+            <TableColumn fx:id="col_DoB" prefWidth="120.66668701171875" text="Date_of_birth" />
+            <TableColumn fx:id="colGender" prefWidth="107.3333740234375" text="Gender" />
+            <TableColumn fx:id="col_DoE" prefWidth="144.66668701171875" text="Date_of_Enrolled" />
         </columns>
       </TableView>
-      <TextField layoutX="61.0" layoutY="29.0" onAction="#handleFilter" prefHeight="25.0" prefWidth="337.0" />
-      <Button fx:id="btn_search" layoutX="401.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #bed4f4;" text="Search" />
-      <HBox layoutY="427.0" prefHeight="43.0" prefWidth="630.0" style="-fx-background-color: darkblue;">
+      <TextField layoutX="181.0" layoutY="29.0" onAction="#handleFilter" prefHeight="25.0" prefWidth="337.0" />
+      <Button fx:id="btn_search" layoutX="540.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #bed4f4;" text="Search" />
+      <HBox layoutX="1.0" layoutY="574.0" prefHeight="46.0" prefWidth="1000.0" style="-fx-background-color: darkblue;">
          <children>
             <Button fx:id="btn_back" mnemonicParsing="false" onAction="#handleBackbutton" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #bed4f4;">
                <cursor>

@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="504.0" prefWidth="706.0" style="-fx-background-color: #640bc9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.student_page_controller">
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #640bc9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.student_page_controller">
    <children>
-      <VBox layoutY="39.0" prefHeight="425.0" prefWidth="110.0" style="-fx-background-color: #27e4be;">
+      <VBox layoutY="39.0" prefHeight="539.0" prefWidth="145.0" style="-fx-background-color: #27e4be;">
          <children>
-            <ImageView fitHeight="149.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="163.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/std3.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnView" mnemonicParsing="false" onAction="#handleViewGrade" prefHeight="54.0" prefWidth="58.0">
+            <Button fx:id="btnView" mnemonicParsing="false" onAction="#handleViewGrade" prefHeight="67.0" prefWidth="95.0">
                <VBox.margin>
                   <Insets left="10.0" top="100.0" />
                </VBox.margin>
@@ -30,7 +30,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="37.0" prefWidth="59.0" textFill="#640bc9">
+            <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="54.0" prefWidth="95.0" textFill="#640bc9">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font>
@@ -47,9 +47,9 @@
             </Button>
          </children>
       </VBox>
-      <HBox layoutY="463.0" prefHeight="41.0" prefWidth="706.0" style="-fx-background-color: lightblue;" />
-      <HBox layoutX="-1.0" layoutY="-2.0" prefHeight="41.0" prefWidth="706.0" style="-fx-background-color: lightblue;" />
-      <ImageView fitHeight="308.0" fitWidth="529.0" layoutX="149.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <HBox layoutX="-2.0" layoutY="578.0" prefHeight="41.0" prefWidth="1007.0" style="-fx-background-color: lightblue;" />
+      <HBox layoutX="-1.0" layoutY="-2.0" prefHeight="41.0" prefWidth="1007.0" style="-fx-background-color: lightblue;" />
+      <ImageView fitHeight="460.0" fitWidth="818.0" layoutX="170.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/hme.jpg" />
          </image>
