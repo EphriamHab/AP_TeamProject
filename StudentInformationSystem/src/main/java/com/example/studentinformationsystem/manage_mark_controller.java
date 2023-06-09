@@ -52,46 +52,6 @@ public class manage_mark_controller {
     private TableView<StudentInfo> tableView;
     ObservableList<StudentInfo> studentInfoList = FXCollections.observableArrayList();
 
-//    @FXML
-//    void updateMark(ActionEvent event) {
-//        // Get the selected mark from the TableView
-//        StudentInfo selectedMark = tableView.getSelectionModel().getSelectedItem();
-//        if (selectedMark != null) {
-//            // Show a dialog or input field to enter the new mark value
-//            TextInputDialog dialog = new TextInputDialog(Double.toString(selectedMark.getMark()));
-//            dialog.setTitle("Enter StudentInfo");
-//            dialog.setHeaderText("Enter the new mark for " + selectedMark.getFirst_name() + " " + selectedMark.getLast_name());
-//            dialog.setContentText("StudentInfo:");
-//
-//            Optional<String> result = dialog.showAndWait();
-//            result.ifPresent(markValue -> {
-//                // Validate and parse the entered mark value
-//                try {
-//                    double mark = Double.parseDouble(markValue);
-//                    // Update the mark value for the selected mark
-//                    selectedMark.setMark(mark);
-//                    // Update the mark in the database (you need to implement the database update logic)
-//
-//                    // Refresh the TableView to reflect the updated mark value
-//                    tableView.refresh();
-//                } catch (NumberFormatException e) {
-//                    // Handle invalid mark value
-//                    Alert alert = new Alert(Alert.AlertType.ERROR);
-//                    alert.setTitle("Invalid StudentInfo");
-//                    alert.setHeaderText("Invalid mark value");
-//                    alert.setContentText("Please enter a valid numeric mark value.");
-//                    alert.showAndWait();
-//                }
-//            });
-//        } else {
-//            // No mark selected, show an error message
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//            alert.setTitle("No StudentInfo Selected");
-//            alert.setHeaderText("No mark selected");
-//            alert.setContentText("Please select a mark from the table.");
-//            alert.showAndWait();
-//
-
     @FXML
     void updateMark(ActionEvent event) {
         // Get the selected mark from the TableView
@@ -173,15 +133,6 @@ public class manage_mark_controller {
     }
 
     @FXML
-    void handleEnterMark(ActionEvent event) throws IOException {
-        loader = new FXMLLoader(getClass().getResource("enter_mark.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
     void deleteMark(ActionEvent event) {
         StudentInfo selectedStudentInfo = tableView.getSelectionModel().getSelectedItem();
         if (selectedStudentInfo != null) {
@@ -253,19 +204,10 @@ public class manage_mark_controller {
             connection=Database.connectDb();
 
             statement = connection.createStatement();
-//            String view = "CREATE VIEW student_view AS SELECT s.student_id, s.first_name, s.last_name, c.course_id, c.course_name, mark_id, m.mark_obtained" +
-//            "FROM student s" +
-//            "JOIN enrollment e ON s.student_id = e.student_id"+
-//            "JOIN course c ON e.course_id = c.course_id"+
-//            "JOIN mark m ON e.enrollment_id = m.enrollment_id";
 
-            String query = "select * from student_view";
+             String query = "select * from student_view";
 
-//            String query = "SELECT s.student_id, s.first_name, s.last_name, c.course_id, c.course_name, m.mark_id, m.mark_obtained " +
-//                    "FROM student s " +
-//                    "JOIN enrollment e ON s.student_id = e.student_id " +
-//                    "JOIN course c ON e.course_id = c.course_id " +
-//                    "JOIN mark m ON e.student_id = m.student_id AND e.course_id = m.course_id";
+
 
             result=statement.executeQuery(query);
             while (result.next()){

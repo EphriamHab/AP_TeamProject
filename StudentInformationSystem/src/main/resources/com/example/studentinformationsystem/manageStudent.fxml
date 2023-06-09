@@ -189,9 +189,9 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="81.0" layoutY="42.0" prefHeight="26.0" prefWidth="281.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
+      <Label layoutX="151.0" layoutY="48.0" prefHeight="28.0" prefWidth="306.0" text="Manage Student Information" textAlignment="CENTER" textFill="#94dbed">
          <font>
-            <Font name="Times New Roman Bold" size="22.0" />
+            <Font name="Times New Roman Bold Italic" size="24.0" />
          </font>
       </Label>
       <HBox layoutX="-2.0" layoutY="580.0" prefHeight="39.0" prefWidth="1007.0" style="-fx-background-color: #747a82;">
@@ -206,27 +206,6 @@
                </graphic>
             </Button>
          </children></HBox>
-      <HBox layoutY="-1.0" prefHeight="39.0" prefWidth="1005.0" style="-fx-background-color: darkcyan;">
-         <children>
-            <Button fx:id="backHome" mnemonicParsing="false" onAction="#handleBackHome" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: darkcyan;" text="Home" textFill="#e26385">
-               <HBox.margin>
-                  <Insets left="250.0" />
-               </HBox.margin>
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@image/home.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Times New Roman Bold Italic" size="13.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
+      <HBox layoutY="-1.0" prefHeight="39.0" prefWidth="1005.0" style="-fx-background-color: darkcyan;" />
    </children>
 </AnchorPane>

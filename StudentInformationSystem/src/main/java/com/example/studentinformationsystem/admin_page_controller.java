@@ -82,8 +82,13 @@ public class admin_page_controller {
         stage.show();
     }
     @FXML
-    void handleAssignTeacher(ActionEvent event) {
-
+    void handleAssignTeacher(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Assign_teacher.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

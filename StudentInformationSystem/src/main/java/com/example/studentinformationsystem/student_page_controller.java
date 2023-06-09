@@ -50,7 +50,7 @@ public class student_page_controller {
     }
     @FXML
     void handleBack(ActionEvent event) throws IOException {
-        loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+        loader = new FXMLLoader(getClass().getResource("Home-view.fxml"));
         root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

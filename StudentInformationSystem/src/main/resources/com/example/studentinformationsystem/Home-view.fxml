@@ -71,9 +71,9 @@
                   <Image url="@image/stud_logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnLogin" defaultButton="true" mnemonicParsing="false" onAction="#handleLogin" prefHeight="49.0" prefWidth="208.0" style="-fx-background-color: #655b75;" text="Login" textAlignment="CENTER">
+            <Button fx:id="btnLogin" defaultButton="true" mnemonicParsing="false" onAction="#handleLogin" prefHeight="60.0" prefWidth="208.0" style="-fx-background-color: #655b75;" text="Login" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets top="280.0" />
+                  <Insets top="270.0" />
                </VBox.margin>
                <font>
                   <Font name="Times New Roman Bold" size="19.0" />

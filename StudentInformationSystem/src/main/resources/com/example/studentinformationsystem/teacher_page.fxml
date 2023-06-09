@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.teacher_page_controller">
    <children>
-      <AnchorPane layoutX="213.0" prefHeight="577.0" prefWidth="788.0" style="-fx-background-color: brown;">
+      <AnchorPane layoutX="213.0" layoutY="36.0" prefHeight="541.0" prefWidth="788.0" style="-fx-background-color: #9999ff;">
          <children>
             <Label contentDisplay="CENTER" layoutX="140.0" layoutY="24.0" prefHeight="47.0" prefWidth="381.0" text="Welcome To Teacher" textFill="#dbe4cc" textOverrun="CENTER_ELLIPSIS">
                <font>
@@ -26,27 +26,36 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <VBox layoutX="-1.0" prefHeight="577.0" prefWidth="215.0" style="-fx-background-color: #763efc;">
+      <VBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="36.0" prefHeight="541.0" prefWidth="215.0" spacing="20.0" style="-fx-background-color: #763efc;">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleGo" prefHeight="43.0" prefWidth="153.0" style="-fx-background-color: blue; -fx-border-radius: 100;" text="Enter Mark" textFill="#f5fcdd">
+            <Button mnemonicParsing="false" onAction="#enterMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Enter Mark" textFill="WHITE">
                <font>
                   <Font name="Times New Roman Bold" size="23.0" />
                </font>
                <VBox.margin>
-                  <Insets left="50.0" top="250.0" />
+                  <Insets left="30.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="37.0" prefWidth="145.0" style="-fx-background-color: pink;" textFill="#0a0501">
+            <Button mnemonicParsing="false" onAction="#updateMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Update Mark" textFill="WHITE">
                <font>
-                  <Font name="Times New Roman" size="20.0" />
+                  <Font name="Times New Roman Bold" size="23.0" />
                </font>
                <VBox.margin>
-                  <Insets left="50.0" top="50.0" />
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#deleteMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Delete Mark" textFill="#f3f7e6">
+               <font>
+                  <Font name="Times New Roman Bold" size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <HBox layoutX="-3.0" layoutY="578.0" prefHeight="43.0" prefWidth="1007.0" style="-fx-background-color: lightblue;">
+      <HBox layoutX="-3.0" layoutY="578.0" prefHeight="43.0" prefWidth="1007.0" style="-fx-background-color: lightblue;" />
+      <HBox layoutX="-6.0" layoutY="-2.0" prefHeight="37.0" prefWidth="1007.0" style="-fx-background-color: #000067;">
          <children>
             <Button mnemonicParsing="false" onAction="#handleBack" prefHeight="45.0" prefWidth="53.0" style="-fx-background-color: transparent;">
                <font>
@@ -55,10 +64,13 @@
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/back.png" />
+                        <Image url="@image/home.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <HBox.margin>
+                  <Insets left="500.0" />
+               </HBox.margin>
             </Button>
          </children>
       </HBox>

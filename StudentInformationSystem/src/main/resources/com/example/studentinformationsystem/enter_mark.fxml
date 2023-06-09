@@ -5,16 +5,18 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="686.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.EnterMarkController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.EnterMarkController">
    <children>
-      <GridPane layoutX="128.0" layoutY="43.0" prefHeight="136.0" prefWidth="335.0">
+      <GridPane layoutX="380.0" layoutY="44.0" prefHeight="136.0" prefWidth="335.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="118.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="222.0" />
@@ -51,26 +53,35 @@
             </Button>
          </children>
       </GridPane>
-      <Button layoutX="-5.0" layoutY="-4.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: orange;" text="Back">
-         <font>
-            <Font name="Times New Roman Bold" size="20.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tableView" layoutX="1.0" layoutY="232.0" prefHeight="263.0" prefWidth="686.0">
+      <TableView fx:id="tableView" layoutX="268.0" layoutY="231.0" prefHeight="330.0" prefWidth="718.0">
          <columns>
-            <TableColumn fx:id="colStudentID" prefWidth="85.0" text="student_id" />
-            <TableColumn fx:id="colFirstName" prefWidth="113.0" text="first_name" />
-            <TableColumn fx:id="colLastName" prefWidth="98.0" text="last_name" />
-            <TableColumn fx:id="colCourseID" prefWidth="99.0" text="course_id" />
-            <TableColumn fx:id="colCourseName" prefWidth="102.0" text="course_name" />
-            <TableColumn fx:id="colMarkID" prefWidth="94.0" text="mark_id" />
-            <TableColumn fx:id="colMark" prefWidth="88.0" text="mark" />
+            <TableColumn fx:id="colStudentID" prefWidth="118.0" text="student_id" />
+            <TableColumn fx:id="colFirstName" prefWidth="121.5" text="first_name" />
+            <TableColumn fx:id="colLastName" prefWidth="114.5" text="last_name" />
+            <TableColumn fx:id="colCourseID" prefWidth="97.33331298828125" text="course_id" />
+            <TableColumn fx:id="colCourseName" prefWidth="101.33331298828125" text="course_name" />
+            <TableColumn fx:id="colMarkID" minWidth="0.0" prefWidth="61.3333740234375" text="mark_id" />
+            <TableColumn fx:id="colMark" prefWidth="147.3333740234375" text="mark" />
          </columns>
       </TableView>
-      <Button layoutX="552.0" layoutY="157.0" mnemonicParsing="false" onAction="#refresh" prefHeight="53.0" prefWidth="110.0" style="-fx-background-color: cyan;" text="Refresh">
+      <AnchorPane layoutY="-1.0" prefHeight="584.0" prefWidth="207.0" style="-fx-background-color: blue;" />
+      <Button layoutX="673.0" layoutY="150.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: cyan;" text="Refresh">
          <font>
             <Font name="Times New Roman Bold" size="20.0" />
          </font>
       </Button>
+      <HBox layoutX="-2.0" layoutY="582.0" prefHeight="37.0" prefWidth="1000.0" style="-fx-background-color: #9999ff;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleBack" prefHeight="50.0" prefWidth="66.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

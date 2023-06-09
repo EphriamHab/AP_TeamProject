@@ -14,9 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 public class ManageEnrollementController {
@@ -186,6 +184,12 @@ public class ManageEnrollementController {
             ex.printStackTrace();
         }
 
+    }
+    @FXML
+    void handleClear(ActionEvent event){
+        txfEnID.clear();
+        txfCId.clear();
+        txfStudId.clear();
     }
 
 

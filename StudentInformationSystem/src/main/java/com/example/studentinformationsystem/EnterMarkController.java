@@ -60,7 +60,7 @@ public class EnterMarkController {
     private TextField txtStudentID;
     @FXML
     void handleBack(ActionEvent event) throws IOException {
-        loader = new FXMLLoader(getClass().getResource("manage_mark.fxml"));
+        loader = new FXMLLoader(getClass().getResource("teacher_page.fxml"));
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -69,26 +69,7 @@ public class EnterMarkController {
     }
     @FXML
     void handleOk(ActionEvent event) throws SQLException, SQLIntegrityConstraintViolationException {
-//        connection = Database.connectDb();
-//        String query = "insert into mark values(?, ?, ?)";
-//        String student_id = txtStudentID.getText();
-//        int course_id = Integer.parseInt(txtCourseID.getText());
-//        double mark = Double.parseDouble(txtMark.getText());
-//        try {
-//            prepare = connection.prepareStatement(query);
-//
-//            prepare.setString(1,student_id);
-//            prepare.setInt(2,course_id);
-//            prepare.setDouble(3,mark);
-//            prepare.executeUpdate();
-//            connection.close();
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setHeaderText(null);
-//            alert.setContentText("Student added successfully!");
-//            alert.showAndWait();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+
         connection = Database.connectDb();
 
         // Prepare the SQL query with placeholders

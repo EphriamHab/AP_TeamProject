@@ -1,4 +1,26 @@
-#pane{
--fx-background-image: url("Student01.jpg");
- 
+.button{
+-fx-background-color :  #230ac9;
+-fx-background-radius : 10;
+}
+.vbox{
+   -fx-background-color : #93a9bd;
+   -fx-background-radius : 10;
+}
+.grid{
+  -fx-background-color : #b2cccf;
+  -fx-background-radius : 30;
+}
+.title{
+-fx-background-color : #c1c5e0;
+ -fx-background-radius : 10;
+
+}
+.textArea{
+   textArea-background:#b2cccf;
+}
+.textArea .content{
+-fx-background-color:textArea-background;
+}
+.table-view {
+    -fx-background-color: #b9d0a6;
 }

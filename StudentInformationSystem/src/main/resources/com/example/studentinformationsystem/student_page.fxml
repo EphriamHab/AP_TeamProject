@@ -2,25 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #640bc9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentinformationsystem.student_page_controller">
    <children>
-      <VBox layoutY="39.0" prefHeight="539.0" prefWidth="145.0" style="-fx-background-color: #27e4be;">
+      <VBox layoutY="56.0" prefHeight="522.0" prefWidth="261.0" style="-fx-background-color: #8000ff;">
          <children>
-            <ImageView fitHeight="163.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/std3.png" />
-               </image>
-            </ImageView>
             <Button fx:id="btnView" mnemonicParsing="false" onAction="#handleViewGrade" prefHeight="67.0" prefWidth="95.0">
                <VBox.margin>
-                  <Insets left="10.0" top="100.0" />
+                  <Insets left="30.0" top="100.0" />
                </VBox.margin>
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
@@ -30,12 +27,20 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View Grade">
+               <VBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="18.0" />
+               </font>
+            </Text>
             <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="54.0" prefWidth="95.0" textFill="#640bc9">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font>
                <VBox.margin>
-                  <Insets left="10.0" top="50.0" />
+                  <Insets left="30.0" top="250.0" />
                </VBox.margin>
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -45,14 +50,46 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Change password">
+               <VBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="18.0" />
+               </font>
+            </Text>
          </children>
       </VBox>
       <HBox layoutX="-2.0" layoutY="578.0" prefHeight="41.0" prefWidth="1007.0" style="-fx-background-color: lightblue;" />
-      <HBox layoutX="-1.0" layoutY="-2.0" prefHeight="41.0" prefWidth="1007.0" style="-fx-background-color: lightblue;" />
-      <ImageView fitHeight="460.0" fitWidth="818.0" layoutX="170.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <HBox layoutX="-1.0" layoutY="-2.0" prefHeight="41.0" prefWidth="1007.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="59.0" prefWidth="73.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="500.0" />
+               </HBox.margin>
+            </Button>
+         </children></HBox>
+      <ImageView fitHeight="349.0" fitWidth="703.0" layoutX="286.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/hme.jpg" />
+            <Image url="@image/stud.jpg" />
          </image>
       </ImageView>
+      <Text fill="#abd21f" layoutX="438.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO STUDENT PAGE" wrappingWidth="452.6810302734375">
+         <font>
+            <Font name="SansSerif Bold Italic" size="28.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="286.0" layoutY="106.0" prefHeight="87.0" prefWidth="698.0" text="                                                 💚💚💚STUDENT CAN💚💚💚&#10;                                                💚💚 VIEW THERE GRADE💚💚&#10;                                               💚💚CHANGE PASSWORD 💚💚                                   ">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="16.0" />
+         </font>
+      </TextArea>
    </children>
 </AnchorPane>

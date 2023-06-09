@@ -2,17 +2,27 @@ package com.example.studentinformationsystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ViewGradeController {
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
@@ -40,15 +50,18 @@ public class ViewGradeController {
     private String loggedInStudentId;
     private String loggedInUsername;
 
-
     public void setLoggedInUsername(String username) {
         this.loggedInUsername = username;
         tableView();
 
 
     }
+    @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        tableView();
+
+        if (loggedInUsername != null) {
+            tableView();
+        }
     }
 
     public void tableView() {
@@ -192,5 +205,15 @@ public class ViewGradeController {
         }
 
         return (double) totalPoints / totalCredits;
+    }
+    @FXML
+    void handleBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_page.fxml"));
+        root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

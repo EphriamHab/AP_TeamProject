@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -28,6 +29,9 @@ public class view_student_controller {
 
         @FXML
         private Button btn_search;
+
+        @FXML
+        private TextField txfSearch;
         @FXML
         private TableView<Student> tableView;
         @FXML
@@ -70,10 +74,41 @@ public class view_student_controller {
         }
 
         @FXML
-        void handleFilter(ActionEvent event) {
-                studentList.sort(Comparator.comparing(Student::getFirstName).thenComparing(Student::getLastName));
+        void handleSearch(ActionEvent event) {
+                String searchText = txfSearch.getText().toLowerCase();
+
+                // Clear the previous search results
+                studentList.clear();
+
+                try {
+                        connect = Database.connectDb();
+                        prepare = connect.prepareStatement("SELECT * FROM student WHERE LOWER(first_name) LIKE ?");
+                        prepare.setString(1, searchText + "%");
+                        result = prepare.executeQuery();
+
+                        while (result.next()) {
+                                studentList.add(new Student(
+                                        result.getString(1),
+                                        result.getString(2),
+                                        result.getString(3),
+                                        result.getString(4),
+                                        result.getString(5),
+                                        result.getDate(6),
+                                        result.getString(7),
+                                        result.getDate(8)));
+                        }
+
+                        connect.close();
+                } catch (SQLException ex) {
+                        ex.printStackTrace();
+                }
+
+                // Sort the studentList alphabetically by last name
+                studentList.sort(Comparator.comparing(Student::getLastName));
+
                 tableView.setItems(studentList);
         }
+
 
         public void loadTableView(){
                 col_ID.setCellValueFactory(new PropertyValueFactory<>("Student_ID"));
