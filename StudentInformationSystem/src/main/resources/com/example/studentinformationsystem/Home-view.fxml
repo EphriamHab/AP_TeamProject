@@ -32,12 +32,12 @@
    <top>
       <MenuBar prefHeight="45.0" prefWidth="637.0" style="-fx-background-color: #dbcced;" BorderPane.alignment="CENTER">
         <menus>
-          <Menu fx:id="about" mnemonicParsing="false" onAction="#handleAbout" text="About">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About Us" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help" />
+          <Menu fx:id="about" mnemonicParsing="false" onAction="#handleAbout" text="Home" />
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleFeedback" text="Send Feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About US" />
+               </items></Menu>
             <Menu mnemonicParsing="false" text="setting">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />

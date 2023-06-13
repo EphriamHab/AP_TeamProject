@@ -114,10 +114,11 @@ public class LoginController {
 
                     if (!userResult.next()) {
                         // User does not exist in the user table, so insert them
-                        String insertQuery = "INSERT INTO user (user_name, password) VALUES (?, ?)";
+                        String insertQuery = "INSERT INTO user (student_id,user_name, password) VALUES (?,?, ?)";
                         prepare = connect.prepareStatement(insertQuery);
-                        prepare.setString(1, username);
-                        prepare.setString(2, password);
+                        prepare.setString(1, result.getString("student_id"));
+                        prepare.setString(2, username);
+                        prepare.setString(3, password);
 
                         int rowsAffected = prepare.executeUpdate();
 
@@ -157,22 +158,49 @@ public class LoginController {
                         alert.setHeaderText(null);
                         alert.setContentText("Wrong Username/Password");
                         alert.showAndWait();
+
                     }
                 } else {
-                    // Invalid username or password
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Wrong Username/Password");
-                    alert.showAndWait();
-                }
+                    // Subsequent logins, check the user table
+                    String authQuery = "SELECT * FROM user WHERE user_name = ? AND password = ?";
+                    prepare = connect.prepareStatement(authQuery);
+                    prepare.setString(1, username);
+                    prepare.setString(2, password);
 
-                connect.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+                    result = prepare.executeQuery();
+
+                    if (result.next()) {
+                        // User authenticated successfully
+                        String currentUsername = getCurrentUsername();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_page.fxml"));
+                        root = loader.load();
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        student_page_controller studentPageController = loader.getController();
+
+                        // Pass the currentUsername to the ViewGradeController
+                        studentPageController.setLoggedInUsername(currentUsername);
+
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    } else {
+                        // Invalid username or password
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error Message");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Wrong Username/Password");
+                        alert.showAndWait();
+                    }
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
-        } else if (cmbLoginType.getValue().toString() == "Teacher") {
+            connect.close();
+        }
+
+
+         else if (cmbLoginType.getValue().toString() == "Teacher") {
             String sql = "SELECT * FROM teacher WHERE first_name = ? and teacher_id = ?";
             connect = Database.connectDb();
             try {
@@ -214,6 +242,7 @@ public class LoginController {
             }
         }
     }
+
     @FXML
     void handleBack(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Home-view.fxml"));

@@ -21,13 +21,28 @@ public class HomeController {
 
 
     @FXML
+    void handleFeedback(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FeedBack.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
     void handleAbout(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("AboutSIMS");
         alert.setHeaderText("SIMS");
-        alert.setContentText("This sims desktop application is done by team for class project we can");
+        alert.setContentText("This sims desktop application is done by team for class project.");
         alert.showAndWait();
     }
+
     @FXML
     void handleLogin(ActionEvent event) {
 
