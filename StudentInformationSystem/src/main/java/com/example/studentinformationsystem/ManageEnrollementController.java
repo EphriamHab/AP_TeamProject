@@ -189,6 +189,7 @@ public class ManageEnrollementController {
     void handleClear(ActionEvent event){
         txfEnID.clear();
         txfCId.clear();
+        txfEndate.setValue(null);
         txfStudId.clear();
     }
 

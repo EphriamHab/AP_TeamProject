@@ -41,6 +41,9 @@ public class LoginController {
     public String  getCurrentUsername() {
         return username.getText();
     }
+    public String  getCurrentPassword() {
+        return password.getText();
+    }
 
     @FXML
     void handleLogin(ActionEvent event) throws SQLException {
@@ -220,9 +223,15 @@ public class LoginController {
                     alert.showAndWait();
                 } else {
                     if (result.next()) {
+                        String currentUsername = getCurrentUsername();
+                        String currentPassword = getCurrentPassword();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("teacher_page.fxml"));
                         root = loader.load();
                         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        teacher_page_controller teacher_page_controller = loader.getController();
+                        // Pass the currentUsername to the ViewGradeController
+                        teacher_page_controller.setLoggedInUsername(currentUsername);
+                        teacher_page_controller.setLoggedInPassword(currentPassword);
                         scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();

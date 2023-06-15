@@ -91,7 +91,7 @@ public class manageCourseController {
     }
 
     @FXML
-    void handleUbdateCourse(ActionEvent event) {
+    void handleUpdateCourse(ActionEvent event) {
         try{
             connect = Database.connectDb();
             prepare= connect.prepareStatement("update course set  course_id=?,course_name=?,course_code=?, credit_hours=?,department_id=? where course_id='"+txfSearch.getText()+"'" );
