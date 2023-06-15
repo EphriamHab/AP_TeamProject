@@ -38,11 +38,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleFeedback" text="Send Feedback" />
                   <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About US" />
                </items></Menu>
-            <Menu mnemonicParsing="false" text="setting">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
         </menus>
          <effect>
             <DropShadow />

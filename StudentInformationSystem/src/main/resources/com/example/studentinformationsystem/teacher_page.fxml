@@ -36,15 +36,7 @@
                   <Insets left="30.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#updateMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Update Mark" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="23.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="30.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#deleteMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Delete Mark" textFill="#f3f7e6">
+            <Button mnemonicParsing="false" onAction="#modifyMark" prefHeight="43.0" prefWidth="166.0" style="-fx-background-color: #0000ab; -fx-border-radius: 100;" text="Modify Mark" textFill="WHITE">
                <font>
                   <Font name="Times New Roman Bold" size="23.0" />
                </font>

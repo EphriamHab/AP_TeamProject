@@ -23,7 +23,7 @@ public class FeedBackController {
     void handleSendButton(ActionEvent event)  {
         String senderEmail = txfEAU.getText();
         String feedback = taFB.getText();
-        String developerEmail = "fantahun360@gmail.com";
+        String developerEmail = "ephremhabtamu2015@gmail.com";
         String host = "smtp.gmail.com";
         String port = "587";
 

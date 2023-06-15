@@ -72,9 +72,10 @@ public class admin_page_controller {
         }
 
     }
+
     @FXML
-    void handleBackHome(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home-view.fxml"));
+    void handleAssignTeacher(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Assign_teacher.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -82,8 +83,8 @@ public class admin_page_controller {
         stage.show();
     }
     @FXML
-    void handleAssignTeacher(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Assign_teacher.fxml"));
+    void handleBackHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

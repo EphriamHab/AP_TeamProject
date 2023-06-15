@@ -39,7 +39,9 @@ public class HomeController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("AboutSIMS");
         alert.setHeaderText("SIMS");
-        alert.setContentText("This sims desktop application is done by team for class project.");
+        alert.setContentText("This sims desktop application is done by team for class project.\n" +
+                "Those Who contributed to this project are\n" +
+                "1 Ephrem Habtamu\n2 Fentahun Mengie\n3 Solomon Muhye \n4 Dawit Zewdu \n5 Jemal Workie");
         alert.showAndWait();
     }
 

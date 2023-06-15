@@ -132,7 +132,6 @@ public class ViewGradeController {
         try {
             connect = Database.connectDb();
             prepare = connect.prepareStatement("SELECT cmv.course_id, cmv.course_name, cmv.credit_hours, cmv.mark_obtained FROM course_marks_view cmv JOIN user sit ON cmv.student_id = sit.student_id WHERE cmv.student_id = ?");
-            System.out.println("prepare");
             prepare.setString(1, this.loggedInStudentId);
             result = prepare.executeQuery();
 
